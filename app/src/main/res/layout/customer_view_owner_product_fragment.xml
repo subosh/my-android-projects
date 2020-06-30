@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="2">
+    <include
+        layout="@layout/toolbar_layout"
+
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/customer_view_ownerproduct_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.8"
+        />
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:id="@+id/place_order"
+        android:text="@string/place_freshorder"
+        android:textSize="13sp"
+        android:background="@drawable/roundbutton"/>
+
+
+</LinearLayout>

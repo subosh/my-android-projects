@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF4081</color>
+    <color name="colorPrimaryDark">#FF4081</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimaryBlueGrey">#102027</color>
+    <color name="colorPrimaryDarkBlueGrey">#102027</color>
+    <color name="colorAccentBlueGrey">#37474f</color>
+    <color name="dialog_activity_subtitle_bg_red">#F0B9B1</color>
+
+    <!-- Color Green -->
+    <color name="colorPrimaryGreen">#00363a</color>
+    <color name="colorPrimaryDarkGreen">#00363a</color>
+    <color name="grocery_shop_app_color">#8edac6</color>
+
+    <!-- Color Purple -->
+    <color name="colorPrimaryPurple">#282c7f</color>
+    <color name="colorPrimaryDarkPurple">#282c7f</color>
+    <color name="colorAccentPurple">#5B55AF</color>
+
+    <!--<color name="colorPrimary">#234D6D</color>-->
+
+    <!--<color name="colorPrimaryDark">#234D6D</color>-->
+    <!--<color name="colorAccent">#117899</color>-->
+    <color name="option_color">#7dc0d5</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="sellquick_default_black">#4c4c4c</color>
+
+    <color name="sellquick_red">#FF0000</color>
+    <color name="sellquick_cart_top">#7A9CB5</color>
+    <color name="sellquick_cart_top_with_alpha">#997A9CB5</color>
+    <color name="sellquick_bg">#D7E4EC</color>
+    <color name="sellquick_green">#0AB616</color>
+    <color name="sellquick_top">#234D6D</color>
+    <color name="sellquick_primary_btn">#3B9FF3</color>
+    <color name="sellquick_normal_btn">#b3cccccc</color>
+    <color name="session_dialog_topBar">#234D6D</color>
+    <color name="session_text_bg">#997A9CB5</color>
+    <color name="session_text_black">#000000</color>
+    <color name="sellquick_black">#000000</color>
+    <color name="session_btn_ok">#117899</color>
+    <color name="session_btn_cancel">#9A9DB0</color>
+    <color name="session_session_red">#FF0000</color>
+    <color name="session_text_white">#FFFFFF</color>
+    <color name="sellquick_grey">#D3D3D3</color>
+    <color name="sellquick_grey1">#757575</color>
+    <color name="light_grey">#f0f5f8</color>
+    <color name="white_grey">#f5f5f5</color>
+    <color name="session_divider">#dae1e8</color>
+    <color name="list_divider">#dae1e8</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_white_click">#f9f6f6</color>
+    <color name="light_blue">#7A9CB5</color>
+    <color name="light_blue_click">#68859B</color>
+    <color name="tender_blue">#f1f5f8</color>
+    <color name="tender_button_green">#4caf50</color>
+    <color name="tender_button_green_click">#388e3c</color>
+    <color name="clear_cart">#ef5350</color>
+    <color name="clear_cart_click">#c62828</color>
+    <color name="blue_tint">#3B9FF3</color>
+    <color name="tender_green">#66c837</color>
+    <color name="tender_grey">#DD222222</color>
+    <color name="dialog_activity_subtitle_bg">#e0f7fa</color>
+    <color name="percentage_icon_bg">#ee5228</color>
+    <color name="amount_icon_bg">#56b36f</color>
+</resources>

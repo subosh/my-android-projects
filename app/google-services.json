@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "926254571323",
+    "firebase_url": "https://restauranttrack.firebaseio.com",
+    "project_id": "restauranttrack",
+    "storage_bucket": "restauranttrack.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926254571323:android:f458aa0b9be04c403b211e",
+        "android_client_info": {
+          "package_name": "com.example.subosh.restauranttrack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926254571323-220503c8e0erropb4kj4emfv8d021adh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGFqtRG4wv21qKbo83pyBhB7s3EwE35_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926254571323-220503c8e0erropb4kj4emfv8d021adh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

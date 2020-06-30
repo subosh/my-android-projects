@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item android:title="Add Your Shop products "
+        android:id="@+id/ownerside_menu_add_products"/>
+    <item android:title="Give Delivery Request"
+        android:id="@+id/ownerside_delivery_request"/>
+    <item android:title="Your Order Details"
+        android:id="@+id/ownerside_getOrder_details"/>
+    <item android:title="Your Delivered Order History"
+        android:id="@+id/ownerside_getOrder_history"/>
+    <item android:title="Logout"
+        android:id="@+id/owner_logout"/>
+</menu>

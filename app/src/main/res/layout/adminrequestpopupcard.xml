@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:weightSum="0.2"
+    android:orientation="vertical">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.03"
+            android:weightSum="1"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/set_shopname"
+                android:layout_weight="0.45"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="30dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:text="to"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.45"
+                android:id="@+id/set_customername"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="30dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.03"
+            android:weightSum="1"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:weightSum="0.3"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.15"
+                    android:id="@+id/order_list_image"
+                    android:src="@drawable/order_details_image"
+                    android:background="@color/sellquick_grey"
+                    />
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                    android:layout_weight="0.15"
+                    android:layout_marginLeft="45dp"
+                android:text="Order Details"
+
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="18dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:orientation="vertical"
+                android:weightSum="0.3">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.15"
+                    android:id="@+id/location_share_image"
+                    app:srcCompat="@drawable/ic_share_image"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.15"
+                    android:layout_marginLeft="45dp"
+                    android:text="Location Share"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+        </LinearLayout>
+</LinearLayout>
+
+

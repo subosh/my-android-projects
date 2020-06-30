@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+    <!--<include-->
+        <!--layout="@layout/toolbar_layout"/>-->
+
+    <EditText
+        android:id="@+id/mylist_edit_quantityEditView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Quantity"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/quantity_spinner_mylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:entries="@array/spinner_quanity_measure">
+    </Spinner>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/updatedetails_mylist"
+        android:layout_marginTop="20dp"
+        android:text="Update Details"
+        />
+</LinearLayout>

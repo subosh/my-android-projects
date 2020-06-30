@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    android:animateLayoutChanges="true"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:contentPadding="3dp"
+    android:weightSum="2">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_weight="1.2"
+            android:orientation="vertical"
+            android:weightSum="3"
+            >
+
+            <TextView
+                android:id="@+id/admin_request_customerName"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1.9"
+                android:text="CustomerName"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Phone Number"
+                android:id="@+id/phonenumber"/>
+
+            <Button
+                android:id="@+id/admin_request_show_order_details"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.6"
+                android:text="Show Order Details"
+                android:background="@drawable/roundbutton"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:textColor="#000000"
+            android:layout_height="50dp"
+            android:layout_weight="0.7"
+            android:id="@+id/order_acceptance_linear_layout"           >
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Accept Order"
+                android:textColor="#ffffff"
+                android:id="@+id/admin_request_order_accept_button"
+                android:background="@color/tender_button_green"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/order_accepted_Text"
+        android:layout_marginTop="80dp"
+        android:text="Order Accepted"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        android:textColor="@color/tender_green"
+        android:layout_marginLeft="210dp"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="355dp"
+        android:layout_height="291dp">
+
+        <TextView
+            android:id="@+id/order_address_text"
+            android:layout_width="106dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="168dp"
+            android:text="Ordered Date:"
+            android:textColor="@color/blue_tint"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ordered_date"
+            android:layout_width="239dp"
+            android:layout_height="27dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginTop="168dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/order_address_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/order_date_text"
+            android:layout_width="109dp"
+            android:layout_height="23dp"
+            android:text="Ordered Time:"
+            android:textColor="@color/blue_tint"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/order_address_text"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="197dp" />
+
+        <TextView
+            android:id="@+id/ordered_time"
+            android:layout_width="210dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ordered_date"
+            app:layout_constraintLeft_toRightOf="@+id/order_date_text"
+            tools:layout_editor_absoluteY="197dp" />
+
+        <TextView
+            android:id="@+id/orderid_text"
+            android:layout_width="109dp"
+            android:layout_height="21dp"
+            android:layout_marginBottom="8dp"
+            android:text="OrderId:"
+            android:textColor="@color/blue_tint"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/order_date_text"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/order_id"
+            android:layout_width="240dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/orderid_text"
+            app:layout_constraintTop_toBottomOf="@+id/ordered_time"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

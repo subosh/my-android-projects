@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+
+    >
+    <include
+        layout="@layout/toolbar_layout"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+
+        <EditText
+            android:id="@+id/admin_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Enter Registered Admin mailId"
+            android:inputType="textEmailAddress" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/etadminname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Enter Your Admin Name"
+                android:inputType="text|textPersonName" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:id="@+id/admin_signin_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="175dp"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
+    </android.support.design.widget.TextInputLayout>
+
+
+
+    <Button
+        android:id="@+id/admin_signin_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIGNIN"
+        android:layout_marginTop="30dp"
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/roundbutton"
+        android:textStyle="italic" />
+
+
+    <Button
+        android:id="@+id/admin_signup_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="SIGNUP"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/roundbutton"
+        android:textSize="22sp"
+        android:textStyle="italic"/>
+
+
+</LinearLayout>

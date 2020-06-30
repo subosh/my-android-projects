@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:contentPadding="3dp"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="4">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/ordered_product_count"
+        android:textStyle="bold"
+        android:layout_weight="0.5"
+        />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:id="@+id/ordered_product_name"
+android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:id="@+id/ordered_product_quantity"
+    android:textStyle="bold"
+    android:layout_weight="1"
+   />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/ordered_product_amount"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>
+
+</android.support.v7.widget.CardView>

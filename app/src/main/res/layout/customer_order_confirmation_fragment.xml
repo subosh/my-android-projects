@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="4">
+    <include
+        layout="@layout/toolbar_layout"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/products"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccentPurple"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/measure"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccentPurple"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/quantity"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccentPurple"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/amount"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccentPurple"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/cartlist_recycler"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.6" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:weightSum="0.5"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:text="Grand Total:"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:id="@+id/grand_total_textview"
+            />
+
+    </LinearLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:weightSum="2"
+       android:orientation="vertical">
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:id="@+id/continue_shopping_button"
+           android:text="CONTINUE SHOPPING"
+           android:textSize="20sp"
+           android:background="@drawable/roundbutton"
+           android:layout_weight="0.8"/>
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_marginTop="30dp"
+           android:id="@+id/confirm_order_button"
+           android:background="@drawable/roundbutton"
+           android:textSize="20sp"
+           android:text="CONFIRM YOUR ORDER"
+           android:layout_weight="0.8"/>
+   </LinearLayout>
+
+
+</LinearLayout>
