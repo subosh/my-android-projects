@@ -21,6 +21,7 @@
         android:focusableInTouchMode="true"
         android:background="@color/sellquick_grey"
 
+
         >
 
         <EditText

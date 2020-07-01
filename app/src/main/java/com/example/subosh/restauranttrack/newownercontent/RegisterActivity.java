@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,7 @@ FirebaseAuth auth;
 ProgressDialog dialog;
 public  String ownername;
 SharedPreferences sharedPreferences;
+Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,9 @@ SharedPreferences sharedPreferences;
         register=(Button)findViewById(R.id.register);
         ownerphone=(EditText)findViewById(R.id.ownerphone);
         marketname=(EditText)findViewById(R.id.marketownername);
+        toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Owner Registration Page");
 
         auth=FirebaseAuth.getInstance();
         dialog=new ProgressDialog(this);

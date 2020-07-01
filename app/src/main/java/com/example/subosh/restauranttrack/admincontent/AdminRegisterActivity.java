@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,7 @@ public class AdminRegisterActivity extends AppCompatActivity implements View.OnC
     FirebaseAuth auth;
     ProgressDialog dialog;
     public  String ownername;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +36,9 @@ public class AdminRegisterActivity extends AppCompatActivity implements View.OnC
         register=(Button)findViewById(R.id.admin_next);
         adminphone=(EditText)findViewById(R.id.AdminphoneNumber);
         adminnametextview=(EditText)findViewById(R.id. Admin_name);
-
+        toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Admin Registration Page");
         auth=FirebaseAuth.getInstance();
         dialog=new ProgressDialog(this);
         register.setOnClickListener(this);

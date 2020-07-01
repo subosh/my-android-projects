@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,7 @@ public class CustomerRegisterActivity extends AppCompatActivity implements View.
     FirebaseAuth auth;
     ProgressDialog dialog;
     SharedPreferences sharedPreferences;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +37,9 @@ public class CustomerRegisterActivity extends AppCompatActivity implements View.
         register=(Button)findViewById(R.id.register);
         customerphone=(EditText)findViewById(R.id.ownerphone);
         customer=(EditText)findViewById(R.id.marketownername);
-
+toolbar=findViewById(R.id.toolbar);
+setSupportActionBar(toolbar);
+getSupportActionBar().setTitle("Customer Registration Page");
         auth=FirebaseAuth.getInstance();
         dialog=new ProgressDialog(this);
         register.setOnClickListener(this);

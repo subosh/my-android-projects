@@ -24,7 +24,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="204dp"
             android:ems="10"
-            android:hint="Enter Your Full Address Here"
+            android:hint="Enter  Full Shop Address Here"
             android:inputType="textPostalAddress" />
 
 
