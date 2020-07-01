@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
+    android:layout_marginTop="60dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginBottom="40dp"
     >
-    <!--<include-->
-        <!--layout="@layout/toolbar_layout"/>-->
+    <include
+        layout="@layout/toolbar_layout"/>
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
+        android:background="@color/sellquick_grey"
+
         >
 
         <EditText
@@ -25,7 +30,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:hint="Enter Registered Marketemail Id"
+            android:hint="Enter Registered Market mail Id"
             android:inputType="textEmailAddress" />
 
         <android.support.design.widget.TextInputLayout

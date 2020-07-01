@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.example.subosh.restauranttrack.MarketOwners;
 import com.example.subosh.restauranttrack.admincontent.PreferenceUtils;
 import com.example.subosh.restauranttrack.admincontent.ProductlistSinglenton;
+import com.example.subosh.restauranttrack.startpagecontent.MainActivity;
 import com.example.subosh.restauranttrack.startpagecontent.MainFragment;
 import com.example.subosh.restauranttrack.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -188,15 +189,47 @@ return  null;
             initilizeOwnerViewCustomerOrdersFragment();
         }
         if(id==R.id.owner_logout){
-            Intent intent=new Intent(ownerproducts.this,MarketOwners.class);
-            startActivity(intent);
-            this.finish();
+//            Intent intent=new Intent(ownerproducts.this,MarketOwners.class);
+//            startActivity(intent);
+//            this.finish();
+            initializeLogoutConfirmationDialog();
         }
         if (id==R.id.ownerside_getOrder_history)
         {
      initializeOwnerOrderHistoryFragment();
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void initializeLogoutConfirmationDialog(){
+        final String No="NO";
+        AlertDialog.Builder builder= new AlertDialog.Builder(ownerproducts.this,R.style.Theme_AppCompat_DayNight_Dialog_Alert);
+
+        builder.setMessage("Next Time You need To Log in again newly")
+                .setTitle("Logging Out From Your Account?")
+                .setPositiveButton("Logout", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, final int which) {
+                        firebaseAuth=FirebaseAuth.getInstance();
+                        firebaseAuth.signOut();
+                        PreferenceUtils.saveName("",ownerproducts.this);
+                        PreferenceUtils.saveLoginType("",ownerproducts.this);
+                        finish();
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        Toast.makeText(getApplicationContext(),"Successfully You Logged Out",Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+        builder.setCancelable(false);
+        builder.setNegativeButton(No, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int position) {
+                        dialog.dismiss();
+                    }
+                }
+        );
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
     public ArrayList<OwnerInformation> getOwnerDetailsFromFirebase(){
         firebaseUser=firebaseAuth.getCurrentUser();

@@ -1,8 +1,10 @@
 package com.example.subosh.restauranttrack.ownercontent;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -101,12 +103,44 @@ CustomersViewPagerAdapter customersViewPagerAdapter;
             startActivity(intent);
         }
         if (id==R.id.customer_logout){
-            Intent intent=new Intent(Owners.this,MarketOwners.class);
-            startActivity(intent);
-            this.finish();
+//            Intent intent=new Intent(Owners.this,MarketOwners.class);
+//            startActivity(intent);
+//            this.finish();
+            initializeLogoutConfirmationDialog();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void initializeLogoutConfirmationDialog(){
+        final String No="NO";
+        AlertDialog.Builder builder= new AlertDialog.Builder(Owners.this,R.style.Theme_AppCompat_DayNight_Dialog_Alert);
+
+        builder.setMessage("Logging Out From Your Account?")
+                .setTitle("Next Time You need To Log in again newly")
+                .setPositiveButton("Logout", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, final int which) {
+                        firebaseAuth=FirebaseAuth.getInstance();
+                        firebaseAuth.signOut();
+                        PreferenceUtils.saveName("",Owners.this);
+                        PreferenceUtils.saveLoginType("",Owners.this);
+                        finish();
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        Toast.makeText(getApplicationContext(),"Successfully You Logged Out",Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+        builder.setCancelable(false);
+        builder.setNegativeButton(No, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int position) {
+                        dialog.dismiss();
+                    }
+                }
+        );
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     @Override

@@ -6,14 +6,27 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
+    android:layout_marginTop="100dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginBottom="40dp"
     tools:context=".customerscontent.UsersFragment">
+   <TextView
 
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:background="@color/blue_tint"
+       android:text="Customer Login"
+       android:textStyle="bold"
+       android:textSize="30dp"
+       android:textColor="#000000"
+       android:gravity="center"/>
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="102dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
+        android:background="@color/sellquick_grey"
         >
 
         <EditText
@@ -24,7 +37,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="204dp"
             android:ems="10"
-            android:hint="Enter Registered User EmailId"
+            android:hint="Enter Registered Customer mailId"
             android:inputType="textEmailAddress" />
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"

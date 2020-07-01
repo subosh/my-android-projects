@@ -20,6 +20,7 @@ import com.example.subosh.restauranttrack.MarketOwners;
 import com.example.subosh.restauranttrack.R;
 import com.example.subosh.restauranttrack.ownercontent.Owners;
 import com.example.subosh.restauranttrack.ownercontent.ownerproducts;
+import com.example.subosh.restauranttrack.startpagecontent.MainActivity;
 import com.example.subosh.restauranttrack.startpagecontent.MainViewPagerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -171,11 +172,43 @@ public class admin extends AppCompatActivity {
             initializefragment();
         }
         if (id==R.id.menu_admin_logogout){
-            Intent intent=new Intent(admin.this,MarketOwners.class);
-            startActivity(intent);
-            this.finish();
+//            Intent intent=new Intent(admin.this,MarketOwners.class);
+//            startActivity(intent);
+//            this.finish();
+            initializeLogoutConfirmationDialog();
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void initializeLogoutConfirmationDialog(){
+        final String No="NO";
+        AlertDialog.Builder builder= new AlertDialog.Builder(admin.this,R.style.Theme_AppCompat_DayNight_Dialog_Alert);
+
+        builder.setMessage("Logging Out From Your Account?")
+                .setTitle("Next Time You need To Logging again newly")
+                .setPositiveButton("Logout", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, final int which) {
+                        firebaseAuth=FirebaseAuth.getInstance();
+                        firebaseAuth.signOut();
+                        PreferenceUtils.saveName("",admin.this);
+                        PreferenceUtils.saveLoginType("",admin.this);
+                        finish();
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        Toast.makeText(getApplicationContext(),"Successfully You Logged Out",Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+        builder.setCancelable(false);
+        builder.setNegativeButton(No, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int position) {
+                        dialog.dismiss();
+                    }
+                }
+        );
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
     public Void getWholeproductslists() {
         databaseReference.addValueEventListener(new ValueEventListener() {

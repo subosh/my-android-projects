@@ -129,9 +129,9 @@ public class AdminSignInFragment extends Fragment implements View.OnClickListene
                     if (task.isComplete()) {
                         firebaseUser=auth.getCurrentUser();
                         progressDialog.dismiss();
-                        getActivity().finish();
                         Intent intent = new Intent(getActivity(), admin.class);
                         intent.putExtra("ADMINNAME",adminname);
+                        getActivity().finish();
                         startActivity(intent);
                         Toast.makeText(getActivity(), "user succesfully logged In"+firebaseUser.getUid(), Toast.LENGTH_LONG).show();
                     }

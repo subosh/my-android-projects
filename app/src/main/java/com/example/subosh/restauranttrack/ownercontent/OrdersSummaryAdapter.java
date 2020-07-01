@@ -21,7 +21,6 @@ import com.example.subosh.restauranttrack.R;
 //import com.example.subosh.restauranttrack.admincontent.CustomOwnerOrderRequestViewManager;
 import com.example.subosh.restauranttrack.admincontent.CustomAdminOrderAccepViewManager;
 import com.example.subosh.restauranttrack.admincontent.OrdersDialogAdminViewAdapter;
-import com.example.subosh.restauranttrack.customerscontent.CustomerInformation;
 import com.example.subosh.restauranttrack.customerscontent.CustomerOrdersPojo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -33,7 +32,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.Random;
 
 
 public class OrdersSummaryAdapter extends RecyclerView.Adapter<OrdersSummaryAdapter.MyHolder> {
@@ -59,6 +62,10 @@ DatabaseReference orderstatusdatabaserefernce;
     FirebaseAuth firebaseAuth;
     OrdersDialogAdapter ordersDialogAdapter;
     FirebaseUser firebaseUser;
+    String productaddingtime,productaddingdate,productId;
+    String productIdGeneration;
+    String code;
+    String productIdArray[];
     public OrdersSummaryAdapter(Context c, ArrayList<OrdersSummaryPojo> p) {
         context=c;
         customerInformationArrayList=p;
@@ -149,15 +156,28 @@ DatabaseReference orderstatusdatabaserefernce;
     private static Float getOrderAmount(Float orderamount){
         return orderamount;
     }
-    public void checkorderstatus(final String orderstatus, final MyHolder holder, String ownerDeliveryRequestStatus)
-    {
-        if (orderstatus.equals("ORDERED")){
-            //holder.ownerOrderAcceptButton.setVisibility(View.VISIBLE);
-            updateOrderedStatusUi(holder,ownerDeliveryRequestStatus);
-        }
-       else if (orderstatus.equals("ORDERACCEPTEDBYADMIN")){
-            updateOrderAcceptedStatusUi(holder,ownerDeliveryRequestStatus);
-        }
+    public String getProductId() {
+        Calendar calendar=Calendar.getInstance();
+        SimpleDateFormat savecurrentdate=new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        productaddingdate= savecurrentdate.format(calendar.getTime());
+        SimpleDateFormat savecurrenttime=new SimpleDateFormat("HH:mm:ss a", Locale.getDefault());
+        SimpleDateFormat savecurrenttimeforproductId=new SimpleDateFormat("HH:mm:ss ", Locale.getDefault());
+        productaddingtime= savecurrenttime.format(calendar.getTime());
+        productIdGeneration=savecurrenttimeforproductId.format(calendar.getTime());
+        Random random = new Random();
+        int n = 1000 + random.nextInt(9000);
+        code= String.valueOf(n);
+        productIdArray=productIdGeneration.split(":");
+        productId=code+productIdArray[0]+productIdArray[1]+productIdArray[2];
+        return productId;
+    }
+
+    public String getProductaddingdate() {
+        return productaddingdate;
+    }
+
+    public String getProductaddingtime() {
+        return productaddingtime;
     }
     public void updateOrderedStatusUi(final MyHolder holder, String ownerDeliveryRequestStatus){
         final Handler handler=new Handler();
@@ -180,34 +200,6 @@ DatabaseReference orderstatusdatabaserefernce;
        else if (ownerDeliveryRequestStatus.equals("NO")){
             holder.ownerOrderAcceptButton.setVisibility(View.GONE);
             }
-    }
-    public void updateOrderAcceptedStatusUi(final MyHolder holder, String ownerDeliveryRequestStatus){
-        if (ownerDeliveryRequestStatus.equals("YES"))
-        {
-            holder.ownerOrderAcceptButton.setVisibility(View.GONE);
-            CustomOwnerOrderRequestViewManager customOwnerOrderRequestViewManager=new CustomOwnerOrderRequestViewManager(context.getApplicationContext());
-            holder.ownerorderAcceptLinearLayout.addView(customOwnerOrderRequestViewManager);
-
-        }
-        if (ownerDeliveryRequestStatus.equals("NO")){
-            holder.ownerOrderAcceptButton.setVisibility(View.GONE);
-            CustomOwnerOrderRequestViewManager customOwnerOrderRequestViewManager=new CustomOwnerOrderRequestViewManager(context.getApplicationContext());
-            holder.ownerorderAcceptLinearLayout.addView(customOwnerOrderRequestViewManager);      }
-
-        final Handler handler=new Handler();
-        Runnable runnable=new Runnable() {
-            @Override
-            public void run() {
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-
-                    }
-                });
-
-            }
-        };
-        new Thread(runnable).start();
     }
     public void initializeOrdersConfirmDialog(final MyHolder holder,final String ownerName,final String customerNamefinal,final String orderStatus, final String orderNodeString,final float orderamountfinal){
         AlertDialog.Builder builder=new AlertDialog.Builder(context);
@@ -240,7 +232,9 @@ DatabaseReference orderstatusdatabaserefernce;
             @Override
             public void onClick(View v) {
                 String orderStatus="ORDERACCEPTEDBYADMIN";
-                setOrderStatusToFirebase(ownerName,customerNamefinal,orderStatus,orderNodeString, alertDialog);
+                String toastMessage="SuccessfUlly You Accepted Order From Customer";
+
+                setOrderStatusToFirebase(ownerName,customerNamefinal,orderStatus,orderNodeString, alertDialog,toastMessage,"not delivered","notdelivered");
                // alertDialog.dismiss();
             }
         });
@@ -299,7 +293,9 @@ initializeOrderDeliveredConfirmationDialog(holder,ownerName,customerNamefinal,or
                     @Override
                     public void onClick(DialogInterface dialog, final int which) {
                         String currentOrderStatus="DELIVERED";
-                        setOrderStatusToFirebase(ownerName, customerNamefinal,currentOrderStatus,orderNodeString,alertDialog);
+                        String toastMessage="SuccessFully You Delivered Order";
+                        getProductId();
+                        setOrderStatusToFirebase(ownerName, customerNamefinal,currentOrderStatus,orderNodeString,alertDialog, toastMessage,getProductaddingdate(),getProductaddingtime());
 
 
                     }
@@ -321,7 +317,7 @@ initializeOrderDeliveredConfirmationDialog(holder,ownerName,customerNamefinal,or
     }
 
 
-    public void setOrderStatusToFirebase(final String ownerName, final String customerNamefinal, final String orderStatus, final String orderNodeString, final AlertDialog dialog){
+    public void setOrderStatusToFirebase(final String ownerName, final String customerNamefinal, final String orderStatus, final String orderNodeString, final AlertDialog dialog, final String toastMessage,final String deliveredDatefinal,final String deliveredTimefinal){
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
         firebaseDatabase= FirebaseDatabase.getInstance();
@@ -334,21 +330,24 @@ initializeOrderDeliveredConfirmationDialog(holder,ownerName,customerNamefinal,or
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     String customername = dataSnapshot1.getKey();
 
-                        //DatabaseReference databaseReference = orderstatusdatabaserefernce.child(marketnamerootnode).child("CUSTOMERORDERS").child(customername).child(ordernodestring);
                         DatabaseReference orderstatuschild = orderstatusdatabaserefernce.child(firebaseUser.getUid()).child("CUSTOMERSORDERS").child(customername).child(orderNodeString).child("ORDERSTATUS");
                         DatabaseReference ordercaretakeradminname = orderstatusdatabaserefernce.child(firebaseUser.getUid()).child("CUSTOMERSORDERS").child(customername).child(orderNodeString).child("ORDERCARETAKER");
-
-                        if (customername.equals(customerNamefinal)&&!checker[0]) {
+                        DatabaseReference deliveredDate=orderstatusdatabaserefernce.child(firebaseUser.getUid()).child("CUSTOMERSORDERS").child(customername).child(orderNodeString).child("DELIVEREDDATE");
+                        DatabaseReference deliveredTime=orderstatusdatabaserefernce.child(firebaseUser.getUid()).child("CUSTOMERSORDERS").child(customername).child(orderNodeString).child("DELIVEREDTIME");
+                        if (customername.equals(customerNamefinal)&&!checker[0])
+                        {
                             orderstatuschild.setValue(orderStatus);
+                            deliveredDate.setValue(deliveredDatefinal);
+                            deliveredTime.setValue(deliveredTimefinal);
                             dialog.dismiss();
-                            progressDialog.setMessage("Plesae Wait We are Confirm Your Order Acceptance From Your Customer");
+                            progressDialog.setMessage("Please Wait We are Confirm Your Order Acceptance From Your Customer");
                             progressDialog.show();
                             ordercaretakeradminname.setValue(ownerName).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isComplete()){
                                         progressDialog.dismiss();
-                                        Toast.makeText(context,"Successfully You Delivered This order,So order details moved to deliverd orders history",Toast.LENGTH_LONG).show();
+                                        Toast.makeText(context,toastMessage,Toast.LENGTH_SHORT).show();
                                         checker[0] =true;
                                     }
                                 }
