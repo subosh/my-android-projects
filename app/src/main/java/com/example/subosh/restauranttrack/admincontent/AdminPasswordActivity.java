@@ -1,19 +1,20 @@
 package com.example.subosh.restauranttrack.admincontent;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.subosh.restauranttrack.R;
 import com.example.subosh.restauranttrack.newownercontent.NameActivity;
 import com.example.subosh.restauranttrack.newownercontent.PasswordActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class AdminPasswordActivity extends AppCompatActivity  implements View.OnClickListener{
+public class AdminPasswordActivity extends AppCompatActivity implements View.OnClickListener{
     String email,adminphone,adminname;
     FirebaseAuth auth;
     EditText password;

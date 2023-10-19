@@ -3,9 +3,6 @@ package com.example.subosh.restauranttrack.customerscontent;
 
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.subosh.restauranttrack.R;
 import com.example.subosh.restauranttrack.admincontent.ProductlistSinglenton;
@@ -48,7 +48,8 @@ public class CustomerViewProductsAdapter extends RecyclerView.Adapter<CustomerVi
         this.customername=customername;
 
     }
-    @NonNull @Override
+    @NonNull
+    @Override
     public CustomerViewProductsAdapter.MyHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
         return new CustomerViewProductsAdapter.MyHolder(LayoutInflater.from(context).inflate(R.layout.customerview_ownerproduct_card,viewGroup,false));

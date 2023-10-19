@@ -30,7 +30,7 @@ tools:context=".customerscontent.CustomerNameActivity"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.101" />
 
-<android.support.design.widget.TextInputLayout
+<com.google.android.material.textfield.TextInputLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="102dp"
@@ -49,8 +49,7 @@ tools:context=".customerscontent.CustomerNameActivity"
         android:hint="@string/enter_name"
         android:inputType="textEmailAddress|textPersonName" />
 
-</android.support.design.widget.TextInputLayout>
-
+</com.google.android.material.textfield.TextInputLayout>
 
 <Button
     android:id="@+id/profile1"

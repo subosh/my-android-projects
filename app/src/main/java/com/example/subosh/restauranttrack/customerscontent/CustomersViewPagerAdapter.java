@@ -1,11 +1,11 @@
 package com.example.subosh.restauranttrack.customerscontent;
 
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
-public class CustomersViewPagerAdapter extends FragmentStatePagerAdapter{
+public class CustomersViewPagerAdapter extends FragmentStatePagerAdapter {
     public CustomersViewPagerAdapter(FragmentManager fm) {
         super(fm);
     }

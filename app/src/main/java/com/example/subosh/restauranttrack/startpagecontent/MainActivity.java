@@ -1,27 +1,23 @@
 package com.example.subosh.restauranttrack.startpagecontent;
 
-import android.content.Context;
 import android.content.Intent;
-import android.opengl.GLSurfaceView;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
+
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
-import com.example.subosh.restauranttrack.MainClass;
 import com.example.subosh.restauranttrack.R;
 import com.example.subosh.restauranttrack.admincontent.AdminSignInActivity;
-import com.example.subosh.restauranttrack.admincontent.admin;
 import com.example.subosh.restauranttrack.customerscontent.UsersFragment;
 import com.example.subosh.restauranttrack.ownercontent.OwnerMainActivity;
-import com.example.subosh.restauranttrack.ownercontent.Owners;
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 

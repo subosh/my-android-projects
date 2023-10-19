@@ -1,17 +1,18 @@
 package com.example.subosh.restauranttrack.ownercontent;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.util.Pair;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.util.Pair;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,11 +21,9 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.subosh.restauranttrack.MarketOwners;
 import com.example.subosh.restauranttrack.admincontent.PreferenceUtils;
 import com.example.subosh.restauranttrack.admincontent.ProductlistSinglenton;
 import com.example.subosh.restauranttrack.startpagecontent.MainActivity;
-import com.example.subosh.restauranttrack.startpagecontent.MainFragment;
 import com.example.subosh.restauranttrack.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

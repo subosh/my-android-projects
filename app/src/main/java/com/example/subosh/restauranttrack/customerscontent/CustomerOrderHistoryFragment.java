@@ -1,20 +1,20 @@
 package com.example.subosh.restauranttrack.customerscontent;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toolbar;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.subosh.restauranttrack.R;
 import com.example.subosh.restauranttrack.ownercontent.OrdersSummaryPojo;
 import com.example.subosh.restauranttrack.ownercontent.OwnerInformation;
-import com.example.subosh.restauranttrack.ownercontent.OwnerOrderHistoryAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,10 +25,9 @@ import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class CustomerOrderHistoryFragment extends Fragment {
-    android.support.v7.widget.Toolbar toolbar;
+    Toolbar toolbar;
     RecyclerView customerorderHistoryRecyclerview;
     DatabaseReference ordershistoryDataBaseReference,customerordersDatabaseReference;
     OrdersSummaryPojo ordersSummaryPojo;

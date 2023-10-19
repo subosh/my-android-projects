@@ -9,7 +9,6 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentSender;
 import android.content.IntentSender.SendIntentException;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -17,16 +16,14 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
-import android.os.Handler;
 import android.os.Looper;
-import android.os.ParcelUuid;
 import android.os.ResultReceiver;
-import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.MimeTypeMap;
@@ -62,7 +59,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
@@ -70,10 +66,7 @@ import static com.example.subosh.restauranttrack.customerscontent.CustomerConsta
 import static com.example.subosh.restauranttrack.customerscontent.CustomerConstants.PERMISSIONS_REQUEST_ENABLE_GPS;
 
 public class CustomerInviteActivity extends AppCompatActivity implements View.OnClickListener,GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener{
-    TextView emailid,customerAddressTextview;
-    TextView date1;
-    TextView code;
-    TextView resulturi;
+    TextView customerAddressTextview;
     String email, code_s, share, date, code1, mydate, password, customerphone,customername;
     Button invite;
     Uri imageUri;
@@ -102,10 +95,6 @@ PendingResult<LocationSettingsResult> resultPendingResult;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_invite);
-        emailid = (TextView) findViewById(R.id.emailid);
-        resulturi = (TextView) findViewById(R.id.resulturi);
-        code = (TextView) findViewById(R.id.code);
-        date1 = (TextView) findViewById(R.id.date1);
         invite = (Button) findViewById(R.id.customer_invite);
         customerAddressTextview=findViewById(R.id.customer_address_textview);
         progressDialog = new ProgressDialog(this);

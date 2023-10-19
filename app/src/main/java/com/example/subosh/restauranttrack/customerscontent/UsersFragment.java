@@ -3,10 +3,12 @@ package com.example.subosh.restauranttrack.customerscontent;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,23 +18,14 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.subosh.restauranttrack.MarketOwners;
 import com.example.subosh.restauranttrack.R;
 import com.example.subosh.restauranttrack.admincontent.PreferenceUtils;
 import com.example.subosh.restauranttrack.ownercontent.Owners;
-import com.example.subosh.restauranttrack.startpagecontent.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 public class UsersFragment extends Fragment implements View.OnClickListener{
     FirebaseAuth auth;
@@ -43,7 +36,6 @@ public class UsersFragment extends Fragment implements View.OnClickListener{
     ListView productslistview;
 
     FirebaseUser firebaseUser;
-    Toolbar toolbar;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -54,7 +46,6 @@ public class UsersFragment extends Fragment implements View.OnClickListener{
         password=(EditText)view.findViewById(R.id.password);
         signin=(Button)view.findViewById(R.id.customer_sign_in);
         signup=(Button)view.findViewById(R.id.customer_sign_up);
-        toolbar=view.findViewById(R.id.toolbar);
 //        MainActivity mainActivity=(MainActivity)getActivity();
 //        mainActivity.setSupportActionBar(toolbar);
 //        mainActivity.setTitle("Customer login");

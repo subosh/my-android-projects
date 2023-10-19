@@ -1,7 +1,6 @@
 package com.example.subosh.restauranttrack.ownercontent;
 
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.subosh.restauranttrack.R;

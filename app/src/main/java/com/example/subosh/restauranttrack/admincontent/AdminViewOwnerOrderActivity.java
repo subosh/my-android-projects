@@ -1,13 +1,14 @@
 package com.example.subosh.restauranttrack.admincontent;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.os.Bundle;
 
 import com.example.subosh.restauranttrack.R;
-import com.example.subosh.restauranttrack.ownercontent.OwnerProductsFragment;
 
 public class AdminViewOwnerOrderActivity extends AppCompatActivity {
 AdminViewOwnerOrderFragment adminViewOwnerOrderFragment;
@@ -24,7 +25,7 @@ String adminname;
     }
     public  void initializeAdminViewOwnerOrderFragment(){
         adminViewOwnerOrderFragment=new AdminViewOwnerOrderFragment();
-        FragmentManager  fragmentManager=getSupportFragmentManager();
+        FragmentManager fragmentManager=getSupportFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.admin_frame,adminViewOwnerOrderFragment);
         fragmentTransaction.commit();

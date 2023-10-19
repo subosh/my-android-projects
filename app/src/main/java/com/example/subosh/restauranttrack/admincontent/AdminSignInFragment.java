@@ -3,12 +3,13 @@ package com.example.subosh.restauranttrack.admincontent;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+
 import android.text.TextUtils;
-import android.text.style.TtsSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +18,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.subosh.restauranttrack.MarketOwners;
 import com.example.subosh.restauranttrack.R;
-import com.example.subosh.restauranttrack.newownercontent.RegisterActivity;
-import com.example.subosh.restauranttrack.ownercontent.OwnerInformation;
-import com.example.subosh.restauranttrack.ownercontent.ownerproducts;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

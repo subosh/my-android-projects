@@ -1,27 +1,25 @@
 package com.example.subosh.restauranttrack.admincontent;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
+
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
-import android.support.v7.widget.Toolbar;
 
-import com.example.subosh.restauranttrack.MarketOwners;
 import com.example.subosh.restauranttrack.R;
-import com.example.subosh.restauranttrack.ownercontent.Owners;
-import com.example.subosh.restauranttrack.ownercontent.ownerproducts;
 import com.example.subosh.restauranttrack.startpagecontent.MainActivity;
-import com.example.subosh.restauranttrack.startpagecontent.MainViewPagerAdapter;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

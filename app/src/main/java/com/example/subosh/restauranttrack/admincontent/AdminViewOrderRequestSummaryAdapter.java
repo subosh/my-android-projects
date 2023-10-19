@@ -1,16 +1,18 @@
 package com.example.subosh.restauranttrack.admincontent;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,7 +90,8 @@ public AdminViewOrderRequestSummaryAdapter(Context c, ArrayList<AdminViewOrdersS
         this.marketname=marketname;
 
         }
-@NonNull @Override
+@NonNull
+@Override
 public MyHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         return new MyHolder(LayoutInflater.from(context).inflate(R.layout.adminrequestviewcard,viewGroup,false));
         }

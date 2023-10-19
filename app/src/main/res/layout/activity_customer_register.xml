@@ -13,7 +13,7 @@
     tools:context=".customerscontent.CustomerRegisterActivity">
     <include
         layout="@layout/toolbar_layout"/>
-    <android.support.design.widget.TextInputLayout
+<com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -30,9 +30,8 @@
             android:ems="10"
             android:hint="Create Customer Email Id"
             android:inputType="textEmailAddress|textPersonName" />
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
+</com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -50,9 +49,8 @@
             android:ems="10"
             android:hint="CustomerName"
             android:inputType="textPersonName" />
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
+</com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -71,8 +69,7 @@
             android:inputType="phone" />
 
 
-    </android.support.design.widget.TextInputLayout>
-
+</com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/register"

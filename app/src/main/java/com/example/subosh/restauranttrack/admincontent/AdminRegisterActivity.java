@@ -2,15 +2,16 @@ package com.example.subosh.restauranttrack.admincontent;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.subosh.restauranttrack.R;
 import com.example.subosh.restauranttrack.newownercontent.PasswordActivity;
@@ -19,7 +20,7 @@ import com.example.subosh.restauranttrack.startpagecontent.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.ProviderQueryResult;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 public class AdminRegisterActivity extends AppCompatActivity implements View.OnClickListener {
     EditText email,adminphone,adminnametextview;
@@ -72,12 +73,12 @@ public class AdminRegisterActivity extends AppCompatActivity implements View.OnC
         }
         dialog.setMessage("Cheacking for this Admin has already account");
         dialog.show();
-        auth.fetchProvidersForEmail(emailid).addOnCompleteListener(new OnCompleteListener<ProviderQueryResult>() {
+        auth.fetchSignInMethodsForEmail(emailid).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
             @Override
-            public void onComplete(@NonNull Task<ProviderQueryResult> task) {
+            public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
                 if (task.isComplete()) {
                     dialog.dismiss();
-                    boolean userexitence=!task.getResult().getProviders().isEmpty();
+                    boolean userexitence=!task.getResult().getSignInMethods().isEmpty();
                     if(!userexitence){
 
                         Intent intent=new Intent(AdminRegisterActivity.this,AdminPasswordActivity.class);

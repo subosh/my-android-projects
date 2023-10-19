@@ -1,16 +1,17 @@
 package com.example.subosh.restauranttrack.admincontent;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.example.subosh.restauranttrack.R;
 import com.example.subosh.restauranttrack.customerscontent.CustomerInformation;
@@ -29,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class AdminDeliveredOrderHistoryFragment extends Fragment {
-    android.support.v7.widget.Toolbar toolbar;
+    Toolbar toolbar;
     RecyclerView recyclerView;
     OwnerInformation ownerInformationObject;
     FirebaseAuth firebaseAuth;

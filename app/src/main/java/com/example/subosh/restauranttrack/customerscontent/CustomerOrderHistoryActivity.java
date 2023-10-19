@@ -1,8 +1,10 @@
 package com.example.subosh.restauranttrack.customerscontent;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.os.Bundle;
 
 import com.example.subosh.restauranttrack.R;

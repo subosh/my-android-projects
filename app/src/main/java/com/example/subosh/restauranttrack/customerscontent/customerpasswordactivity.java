@@ -1,12 +1,13 @@
 package com.example.subosh.restauranttrack.customerscontent;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.subosh.restauranttrack.R;
 import com.example.subosh.restauranttrack.newownercontent.NameActivity;

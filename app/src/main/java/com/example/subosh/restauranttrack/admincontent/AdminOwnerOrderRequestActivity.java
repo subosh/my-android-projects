@@ -2,9 +2,10 @@ package com.example.subosh.restauranttrack.admincontent;
 
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.subosh.restauranttrack.R;
 import com.google.firebase.auth.FirebaseAuth;

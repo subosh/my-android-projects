@@ -13,7 +13,7 @@
     tools:context=".admincontent.AdminRegisterActivity">
     <include
         layout="@layout/toolbar_layout"/>
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -31,9 +31,9 @@
             android:ems="10"
             android:hint="Create Admin EmailId"
             android:inputType="textEmailAddress|textPersonName" />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -51,9 +51,9 @@
             android:ems="10"
             android:hint="AdminName"
             android:inputType="textPersonName" />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
             android:inputType="phone" />
 
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/admin_next"
         android:layout_width="160dp"

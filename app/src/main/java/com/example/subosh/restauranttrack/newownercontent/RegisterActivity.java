@@ -3,22 +3,23 @@ package com.example.subosh.restauranttrack.newownercontent;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.example.subosh.restauranttrack.R;
 import com.example.subosh.restauranttrack.startpagecontent.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.ProviderQueryResult;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 EditText email,ownerphone,marketname;
@@ -78,33 +79,30 @@ Toolbar toolbar;
         }
         dialog.setMessage("Cheacking for user has already account");
         dialog.show();
-        auth.fetchProvidersForEmail(emailid).addOnCompleteListener(new OnCompleteListener<ProviderQueryResult>() {
-            @Override
-            public void onComplete(@NonNull Task<ProviderQueryResult> task) {
-                if (task.isComplete()) {
-                    dialog.dismiss();
-            boolean userexitence=!task.getResult().getProviders().isEmpty();
-            if(!userexitence){
-
-                Intent intent=new Intent(RegisterActivity.this,PasswordActivity.class);
-                intent.putExtra("email",email.getText().toString());
-                intent.putExtra("ownerphonenumber",ownerphonenumber);
-                intent.putExtra("ownername",ownername);
-                startActivity(intent);
-                finish();
-            }
-            else {
+        auth.fetchSignInMethodsForEmail(emailid).addOnCompleteListener(task -> {
+            if (task.isComplete()) {
                 dialog.dismiss();
-                Toast.makeText(getApplicationContext(),"Account is already registered",Toast.LENGTH_LONG).show();
-                finish();
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        boolean userexitence=!task.getResult().getSignInMethods().isEmpty();
+        if(!userexitence){
 
+            Intent intent=new Intent(RegisterActivity.this,PasswordActivity.class);
+            intent.putExtra("email",email.getText().toString());
+            intent.putExtra("ownerphonenumber",ownerphonenumber);
+            intent.putExtra("ownername",ownername);
+            startActivity(intent);
+            finish();
+        }
+        else {
+            dialog.dismiss();
+            Toast.makeText(getApplicationContext(),"Account is already registered",Toast.LENGTH_LONG).show();
+            finish();
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
+        }
             }
-                }
-                else{
-                   dialog.dismiss();
-                    Toast.makeText(getApplicationContext(),"Registerationunsucess",Toast.LENGTH_LONG).show();
-                }
+            else{
+               dialog.dismiss();
+                Toast.makeText(getApplicationContext(),"Registerationunsucess",Toast.LENGTH_LONG).show();
             }
         });
         }
